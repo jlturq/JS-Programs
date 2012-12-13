@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Program Simulating the Game of Craps</title>
+      <style type = "text/css" >
+      div.red {color: red}
+      </style>
+ 
+  <script type="text/javascript">
+<!-- 
+
+// process one roll of dice
+
+function play()  {
+	
+	var statusDiv = document.getElementById("status");
+		sumOfDice = rollDice(); 
+		
+		switch ( sumOfDice )  {
+			case 7: case 11: 			       // win on first roll
+				statusDiv.innerHTML = "Player wins! " + "Click 'Roll Dice' to play again.";
+				break;
+			case 2: case 12: 			       // lose on first roll
+				statusDiv.innerHTML = "Player loses! " + "Click 'Roll Dice' to play again.";
+				break;
+			default: 				          // remember point
+				statusDiv.innerHTML = "Please roll again!";
+	}
+}
+
+// roll the dice
+
+function rollDice()  {
+	
+	var die1,die2, diceSum;
+	die1 = Math.floor( 1 + Math.random() * 6 );
+	die2 = Math.floor( 1 + Math.random() * 6 );
+	diceSum = die1 + die2;
+	document.getElementById("firstDie").value = die1;
+	document.getElementById("secondDie").value = die2;
+	document.getElementById("sum").value = diceSum;
+	return diceSum;
+}
+--> 
+  </script>
+  </head>
+    <body>
+	   <form action = "">
+		  <table>
+		    <caption>The Game of Craps</caption>
+		      <tr><td>Die 1</td>
+				<td><input id = "firstDie" type = "text" /></td></tr>
+				<tr><td>Die 2</td>
+				<td><input id = "secondDie" type = "text" /></td></tr>
+				<tr><td>Sum</td>
+				<td><input id = "sum" type = "text" />
+				</td></tr>
+				<tr><td><input type = "button" value = "Roll Dice" onclick = "play()" /></td></tr>
+			</table><br />
+			
+		<div id="status" class="red">
+		Click the 'Roll Dice' button to play.</div>
+		
+		</form>
+    </body>
+</html> 
