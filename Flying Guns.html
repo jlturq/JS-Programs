@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1 -strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Flying Guns</title>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+      <script type="text/javascript"> 
+  	
+		  var widthMax = 0;
+		  var heightMax = 0;
+		  var buzzSpeed = new Array(3);
+	    	   buzzSpeed[0] = 12;
+				buzzSpeed[1] = 05;
+				buzzSpeed[2] = 22;
+		  var xPosition = new Array(3);
+				xPosition[0] = 20;
+				xPosition[1] = 30;
+				xPosition[2] = 40;
+		  var yPosition = new Array(3);
+				yPosition[0] = 0;
+				yPosition[1] = 5;
+				yPosition[2] = 10;
+		  var xDirection = new Array(3);
+				xDirection[0] = "right";
+				xDirection[1] = "left";
+				xDirection[2] = "right";
+		  var yDirection = new Array(3);
+				yDirection[0] = "down";
+				yDirection[1] = "up";
+				yDirection[2] = "up";
+				
+			function setGun(newStartPoint)  {
+				widthMax = document.documentElement.clientWidth;
+				heightMax = document.documentElement.clientHeight;
+				
+				setInterval("flyingGun(0)", 40);
+				setInterval("flyingGun(1)", 20);
+				setInterval("flyingGun(2)", 60);
+			}
+				
+			function flyingGun(curGun)  {
+				var activeGun = document.getElementById("gunImage" + curGun);
+				var activeElement = document.getElementById("gunElement" + curGun);
+				
+				if (xDirection[curGun] == "right" && xPosition[curGun] > (widthMax - activeGun.width - buzzSpeed[curGun]))  {
+					xDirection[curGun] = "left";
+				}
+				else if (xDirection[curGun] == "left" && xPosition[curGun]<=0)  {
+					xDirection[curGun] = "right";
+				}
+				
+				if (yDirection[curGun] == "down" && yPosition[curGun] > (heightMax - activeGun.height - buzzSpeed[curGun]))  {
+					yDirection[curGun] = "up";
+				}
+				else if (yDirection[curGun] == "up" && yPosition[curGun]<=0)  {
+					yDirection[curGun] = "down";
+				}
+					
+				if (xDirection[curGun] =="right")  {
+					xPosition[curGun] = xPosition[curGun] + buzzSpeed[curGun];
+				}
+				else if (xDirection[curGun] =="left")  {
+					xPosition[curGun] = xPosition[curGun] - buzzSpeed[curGun];
+				}
+				else  {
+					xPosition[curGun] = xPosition[curGun];
+				}
+				if (yDirection[curGun] =="down")  {
+					yPosition[curGun] = yPosition[curGun] + buzzSpeed[curGun];
+				}					
+				else if (yDirection[curGun] =="up")  {
+					yPosition[curGun] = yPosition[curGun] - buzzSpeed[curGun];
+				}
+				else  {
+					yPosition[curGun] = yPosition[curGun];
+				}
+				activeElement.style.left = xPosition[curGun] + document.documentElement.scrollLeft + "px";
+				activeElement.style.top = yPosition[curGun] + document.documentElement.scrollTop + "px";
+				}
+		
+			window.onresize = setGun();
+		</script>	
+</head>
+
+  <body onload = "setGun()">
+	
+    <div id = "gunElement0" style = "position:absolute; left: 0px; top: 0px">
+	 <img id = "gunImage0" src="MAC10.jpg" alt = "Image of a MAC 10 machine gun." height = "50" width = "50" />
+    </div>
+		
+	 <div id = "gunElement1" style = "position:absolute; left: 15px; top: 10px">
+	 <img id = "gunImage1" src="handgun.jpg" alt = "Image of a handgun." height = "50" width = "50" />
+	 </div>
+		
+	 <div id = "gunElement2" style = "position:absolute; left: 20px; top: 20px">
+	 <img id = "gunImage2" src="M16.jpg" alt = "Image of crossed M-16 rifles." height = "50" width = "50" />
+	 </div>
+	
+  file:///home/jlturq/JS-Programs/Guns/MAC10.jpg
+  file:///home/jlturq/JS-Programs/Guns/handgun.jpg
+  file:///home/jlturq/JS-Programs/Guns/M16.jpg
+
+  </body>
+</html>	
+		
+	
+		
