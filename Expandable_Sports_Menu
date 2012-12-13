@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Sports Expandable Menu</title>
+     <style type= "text/css">
+		   body 	{
+				font-family: Verdana,Arial, Helvetica, sans-serif;
+				font size: 20px;
+			}
+			
+			h1	{color: black;}
+
+			table	 { 
+				background-color: red; border-style: solid; border-width: thick; border-color: black;
+			}
+
+			a.noDecor  {
+				text-decoration: none; color: black;
+			}
+
+			table.noShow{visibility:hidden; position:absolute}
+			
+		</style>
+  </head>
+    <body>
+	   <h1>Sporting News: Expandable Menu</h1>	
+		  <table width="75%">
+		    <tr align="left">
+			   <td onmouseover="document.getElementById('NFL').style.visibility='visible';"
+					onmouseout = "document.getElementById('NFL').style.visibility='hidden';">
+				<a href="" class="noDecor">Football</a><br />
+				<table class="noShow" id= "NFL" width ="35%">
+				  <tr><td><a href = "http://www.nfl.com/">NFL.com</a></td></tr>
+				  <tr><td><a href = "http://sports.espn.go.com/nfl/index">ESPN</a></td></tr>
+				  <tr><td><a href = "http://sports.yahoo.com/nfl;_ylt=AsRakGSbKIS7qaEoSsk90ls5nYcB">Yahoo! Sports</a></td></tr>
+				</table>
+
+				<td onmouseover="document.getElementById('MLB').style.visibility='visible';"
+					onmouseout = "document.getElementById('MLB').style.visibility='hidden';">
+				<a href="" class="noDecor">Baseball</a><br />
+				<table class="noShow" id= "MLB" width ="35%">
+				  <tr><td><a href = "http://www.mlb.com/">MLB.com</a></td></tr>
+				  <tr><td><a href = "http://sports.espn.go.com/mlb/index">ESPN</a></td></tr>
+				  <tr><td><a href = "http://sports.yahoo.com/mlb/;_ylt=AsRakGSbKIS7qaEoSsk90ls5nYcB">Yahoo! Sports</a></td></tr>
+				</table>
+
+				<td onmouseover="document.getElementById('NBA').style.visibility='visible';"
+					onmouseout = "document.getElementById('NBA').style.visibility='hidden';">
+				<a href="" class="noDecor">Basketball</a><br />
+				<table class="noShow" id= "NBA" width ="35%">
+				  <tr><td><a href = "http://www.nba.com/">NBA.com</a></td></tr>
+				  <tr><td><a href = "http://espn.go.com/nba/">ESPN</a></td></tr>
+				  <tr><td><a href = "http://sports.yahoo.com/nba/">Yahoo! Sports</a></td></tr>
+				</table>
+
+				<td onmouseover="document.getElementById('NHL').style.visibility='visible';"
+					onmouseout = "document.getElementById('NHL').style.visibility='hidden';">
+				<a href="" class="noDecor">Hockey</a><br />
+				<table class="noShow" id= "NHL" width ="35%">
+				  <tr><td><a href = "http://www.nhl.com/">NHL.com</a></td></tr>
+				  <tr><td><a href = "http://sports.espn.go.com/nfl/index">ESPN</a></td></tr>
+				  <tr><td><a href = "http://sports.yahoo.com/nhl/">Yahoo! Sports</a></td></tr>
+				</table>
+			 </tr>
+		  </table>		
+
+    </body>
+</html>      
+				
