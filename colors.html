@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-US" xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Colors</title>
+	  <script type="text/javascript">
+		function colorChoice(colorButton){
+		  alert("You chose the color: " + colorButton);
+		}		
+      </script>
+  </head>
+    <body onload="colorChoice()">
+	   <form>
+		  <input type= "radio" name= "radName" value= "Red" onclick= "colorChoice('RED')" />Red<br />
+		  <input type= "radio" name= "radName" value= "Blue" onclick= "colorChoice('BLUE')" />Blue<br />
+		  <input type= "radio" name= "radName" value= "Green" onclick= "colorChoice('GREEN')" />Green<br />
+		  <input type= "radio" name= "radName" value= "Yellow" onclick= "colorChoice('YELLOW')" />Yellow<br />
+		  <input type= "radio" name= "radName" value= "Orange" onclick= "colorChoice('ORANGE')" />Orange<br />
+	   </form>
+    </body>
+</html>      
